@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--==================== FONT AWESOME ====================-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/signin.css" />
+    <title>Salewa: Signup</title>
+  </head>
+  <body>
+    <!-- BEGINING OF NAVBAR -->
+    <nav>
+      <div class="container nav_container">
+        <a href="index.html">
+          <h4>SALEWA</h4>
+        </a>
+        <ul class="nav__menu">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./signin.html">Login</a></li>
+          <li class="active" aria-selected="true">
+            <a href="./signup.html">Signup</a>
+          </li>
+          <li><a href="./ceo.html">Settings</a></li>
+        </ul>
+        <button id="open-menu-btn">
+          <i class="fa fa-bars" aria-hidden="true"></i>
+        </button>
+        <button id="close-menu-btn">
+          <i class="fa fa-times" aria-hidden="true"></i>
+        </button>
+      </div>
+    </nav>
+
+    <!-- END OF NAVBAR -->
+
+    <!-- SIGNIN FORM -->
+
+    <main class="container signin__container">
+      <form class="signin__form">
+        <h1 class="text">Please enter your details</h1>
+
+        <div class="text row">
+          <div>
+            <label for="firstName"><strong>First Name</strong></label>
+            <input
+              type="text"
+              id="firstName"
+              autofocus=""
+              required=""
+              placeholder="John"
+            />
+          </div>
+          <div>
+            <label for="lastName"><strong>Last Name</strong></label>
+            <input type="text" id="lastName" required="" placeholder="Doe" />
+          </div>
+        </div>
+
+        <div class="text">
+          <label for="floatingInput"><strong>Email address</strong></label>
+          <input
+            type="email"
+            id="floatingInput"
+            placeholder="name@example.com"
+          />
+        </div>
+
+        <div class="text">
+          <legend><strong>Gender</strong></legend>
+          <div class="fix">
+            <input type="radio" id="male" name="gender" value="Male" />
+            <label for="male"> Male </label><br />
+            <input type="radio" id="female" name="gender" value="Female" />
+            <label for="female">Female</label>
+          </div>
+        </div>
+
+        <div class="text">
+          <label for="floatingInput"><strong>Phone number</strong></label
+          ><input
+            type="tel"
+            id="phoneNumber"
+            placeholder="Enter Phone Number"
+          />
+        </div>
+
+        <div class="text">
+          <label for="address"><strong>Address</strong></label
+          ><input
+            type="text"
+            autocomplete
+            id="address"
+            placeholder="Enter Your Address"
+          />
+        </div>
+
+        <div class="text">
+          <label for="password"><strong>Set Password</strong></label
+          ><input
+            class="password"
+            type="password"
+            id="password"
+            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,16}$"
+            required=""
+            placeholder="Enter Password"
+          /><i
+            class="far fa-eye"
+            id="togglePassword"
+            style="margin-left: -30px; cursor: pointer"
+          ></i>
+          <small
+            >Password must be 8-16 characters long and contain one uppercase and
+            one lowercase character</small
+          >
+        </div>
+
+        <div class="text">
+          <label for="password"><strong>Confirm Password</strong></label
+          ><input
+            type="password"
+            id="confirmPassword"
+            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,16}$"
+            required=""
+            placeholder="Repeat Password"
+          /><i
+            class="far fa-eye"
+            id="toggleConfirmPassword"
+            style="margin-left: -30px; cursor: pointer"
+          ></i>
+        </div>
+
+        <div class="text">
+          <label for="profilePicture"><strong>Profile Picture</strong></label
+          ><input
+            type="file"
+            required=""
+            id="profilePicture"
+            accept="image/png, image/gif, image/jpeg"
+            placeholder="Upload Profile Picture"
+          />
+        </div>
+
+        <div class="text">
+          <legend><strong>Role</strong></legend>
+          <div class="fix">
+            <input type="radio" id="sales" name="role" value="Sales" />
+            <label for="sales"> Sales </label><br />
+            <input type="radio" id="loader" name="role" value="Loader" />
+            <label for="loader">Loader</label>
+          </div>
+        </div>
+
+        <p class="text">
+          By signing up, you agree to our
+          <a class="blue" href="#">Terms & Conditions</a> and have read and
+          acknowledged our <a class="blue" href="#">Privacy Policy.</a>
+        </p>
+
+        <button class="btn btn-primary" type="submit">Sign Up</button>
+      </form>
+
+      <!-- END OF CONTACT FORM -->
+    </main>
+
+    <!--=============== MAIN JS ===============-->
+    <script src="./main.js"></script>
+    <script src="./password.js"></script>
+  </body>
+</html>

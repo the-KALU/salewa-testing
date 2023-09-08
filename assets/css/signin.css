@@ -1,0 +1,87 @@
+/* SIGNIN FORM */
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+input {
+  width: 100%;
+  padding: 1rem;
+  background: var(--color-bg);
+  color: #222;
+  border-radius: 0.2rem;
+}
+
+input[type="radio"] {
+  width: min-content;
+}
+
+.contact__form .btn {
+  width: max-content;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.signin__container {
+  background: var(--color-white);
+  padding: 4rem;
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+  max-width: 80vw;
+  height: auto;
+  margin: 8rem auto 3rem;
+  border-radius: 1rem;
+}
+
+a.blue {
+  color: var(--color-primary);
+}
+
+.text {
+  color: #222;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 2rem;
+}
+
+/* TABLET SIZE MEDIA QUERY */
+
+@media screen and (max-width: 1000px) {
+  .signin__container {
+    max-width: 80vw;
+  }
+  .row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+/* MOBILE SIZE MEDIA QUERY */
+
+@media screen and (max-width: 590px) {
+  .signin__container {
+    max-width: 90vw;
+    padding: 2rem 1rem;
+  }
+
+  form {
+    gap: 0.6rem;
+  }
+
+  input {
+    padding: 0.7rem;
+  }
+  label {
+    font-size: 0.8rem;
+  }
+  p,
+  a {
+    font-size: 0.85rem;
+  }
+}

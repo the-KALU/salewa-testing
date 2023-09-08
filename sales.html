@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--==================== FONT AWESOME ====================-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/ceo.css" />
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
+    <title>Salewa: Sales</title>
+  </head>
+
+  <body>
+    <!-- BEGINING OF NAVBAR -->
+    <nav>
+      <div class="container nav_container">
+        <a href="index.html">
+          <h4>SALEWA</h4>
+        </a>
+        <ul class="nav__menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="./signin.html">Login</a></li>
+          <li><a href="./signup.html">Signup</a></li>
+          <li class="active"><a href="./ceo.html">Settings</a></li>
+        </ul>
+        <button id="open-menu-btn">
+          <i class="fa fa-bars" aria-hidden="true"></i>
+        </button>
+        <button id="close-menu-btn">
+          <i class="fa fa-times" aria-hidden="true"></i>
+        </button>
+      </div>
+    </nav>
+
+    <!-- END OF NAVBAR -->
+
+    <main>
+      <div class="container">
+        <!-- Left Side -->
+        <div class="left">
+          <a class="profile">
+            <div class="profile-photo">
+              <img src="./assets/images/tm3.jpg" alt="" />
+            </div>
+            <div class="handle">
+              <h4>Roman Doe</h4>
+              <p class="text-muted">Welcome Roman</p>
+            </div>
+          </a>
+
+          <!-- Left Sidebar -->
+          <div class="sidebar">
+            <a class="menu-item active" data-target="#current">
+              <span><i class="uil uil-notes"></i></span>
+              <h3>Current day sales</h3>
+            </a>
+            <a class="menu-item" data-target="#records">
+              <span><i class="uil uil-book-open"></i></span>
+              <h3>Records</h3>
+            </a>
+            <a class="menu-item" data-target="#profile">
+              <span><i class="uil uil-user-circle"></i></span>
+              <h3>Profile</h3>
+            </a>
+          </div>
+          <div class="logout">
+            <a class="btn btn-primary logout__button">
+              <i class="uil uil-user-minus"></i>Log Out</a
+            >
+          </div>
+        </div>
+
+        <!-- Right Side -->
+        <div class="right">
+          <!-- Current Day sales -->
+          <section class="section current active" data-content id="current">
+            <div class="sales-record">
+              <h2>Current Day Sales</h2>
+              <div class="info">
+                <table>
+                  <tr>
+                    <th class="date" colspan="6">Monday, 20th June, 2023.</th>
+                  </tr>
+                  <tr>
+                    <th>Products</th>
+                    <th>
+                      QTY <br />
+                      Loaded
+                    </th>
+                    <th>QTY <br />Returned</th>
+                    <th>QTY <br />Changed</th>
+                    <th>
+                      QTY <br />
+                      Sold
+                    </th>
+                    <th>
+                      Total <br />
+                      Amount
+                    </th>
+                  </tr>
+                  <tr>
+                    <td class="item">Bread</td>
+                    <td class="qty-loaded">20</td>
+                    <td class="qty-returned">2</td>
+                    <td class="qty-changed">5</td>
+                    <td class="qty-sold">14</td>
+                    <td class="total">N11,490</td>
+                  </tr>
+                  <tr>
+                    <td class="item">Biscuit</td>
+                    <td class="qty-loaded">20</td>
+                    <td class="qty-returned">2</td>
+                    <td class="qty-changed">5</td>
+                    <td class="qty-sold">14</td>
+                    <td class="total">N11,490</td>
+                  </tr>
+                  <tr>
+                    <td class="item">Cookies</td>
+                    <td class="qty-loaded">30</td>
+                    <td class="qty-returned">2</td>
+                    <td class="qty-changed">5</td>
+                    <td class="qty-sold">14</td>
+                    <td class="total">N11,490</td>
+                  </tr>
+                  <tr>
+                    <td class="item">Coffee</td>
+                    <td class="qty-loaded">50</td>
+                    <td class="qty-returned">2</td>
+                    <td class="qty-changed">5</td>
+                    <td class="qty-sold">14</td>
+                    <td class="total">N11,490</td>
+                  </tr>
+                </table>
+              </div>
+              <div class="expense-action">
+                <button class="btn btn-primary">Edit</button>
+                <button class="btn btn-primary">Submit</button>
+              </div>
+            </div>
+          </section>
+
+          <!-- Records -->
+          <section class="section records" data-content id="records">
+            <!-- sales Record -->
+            <div class="sales-record">
+              <h2>Sales Record</h2>
+              <div class="info">
+                <table>
+                  <tr>
+                    <th>Date</th>
+                    <th>Products</th>
+                    <th>
+                      QTY <br />
+                      Loaded
+                    </th>
+                    <th>QTY <br />Returned</th>
+                    <th>QTY <br />Changed</th>
+                    <th>
+                      QTY <br />
+                      Sold
+                    </th>
+                    <th>
+                      Total <br />
+                      Amount
+                    </th>
+                  </tr>
+                  <tr>
+                    <td class="date" rowspan="4">20-06-2023</td>
+                    <td class="item">Bread</td>
+                    <td class="qty-loaded">20</td>
+                    <td class="qty-returned">2</td>
+                    <td class="qty-changed">5</td>
+                    <td class="qty-sold">14</td>
+                    <td class="total">N11,490</td>
+                  </tr>
+                  <tr>
+                    <td class="item">Biscuit</td>
+                    <td class="qty-loaded">20</td>
+                    <td class="qty-returned">2</td>
+                    <td class="qty-changed">5</td>
+                    <td class="qty-sold">14</td>
+                    <td class="total">N11,490</td>
+                  </tr>
+                  <tr>
+                    <td class="item">Cookies</td>
+                    <td class="qty-loaded">30</td>
+                    <td class="qty-returned">2</td>
+                    <td class="qty-changed">5</td>
+                    <td class="qty-sold">14</td>
+                    <td class="total">N11,490</td>
+                  </tr>
+                  <tr>
+                    <td class="item">Coffee</td>
+                    <td class="qty-loaded">50</td>
+                    <td class="qty-returned">2</td>
+                    <td class="qty-changed">5</td>
+                    <td class="qty-sold">14</td>
+                    <td class="total">N11,490</td>
+                  </tr>
+                  <tr>
+                    <td class="date" rowspan="3">21-06-2023</td>
+                    <td class="item">Chocolate cake</td>
+                    <td class="qty-loaded">10</td>
+                    <td class="qty-returned">2</td>
+                    <td class="qty-changed">5</td>
+                    <td class="qty-sold">14</td>
+                    <td class="total">N11,490</td>
+                  </tr>
+                  <tr>
+                    <td class="item">Bread</td>
+                    <td class="qty-loaded">20</td>
+                    <td class="qty-returned">2</td>
+                    <td class="qty-changed">5</td>
+                    <td class="qty-sold">14</td>
+                    <td class="total">N11,490</td>
+                  </tr>
+                  <tr>
+                    <td class="item">Vanila Cake</td>
+                    <td class="qty-loaded">6</td>
+                    <td class="qty-returned">2</td>
+                    <td class="qty-changed">5</td>
+                    <td class="qty-sold">14</td>
+                    <td class="total">N11,490</td>
+                  </tr>
+                </table>
+              </div>
+              <div class="expense-action">
+                <button class="btn btn-primary">Download</button>
+              </div>
+            </div>
+          </section>
+
+          <section class="section profile" data-content id="profile">
+            <div class="profile-class">
+              <h2>Profile</h2>
+              <p>
+                <strong>Name:</strong> Alice Cook <br />
+                <strong>Email: </strong> user@example.com <br />
+                <strong>Address:</strong> Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Quis? <br />
+                <strong>Phone Number:</strong> 0123 456 7890 <br />
+                <strong>Sex:</strong> Female <br />
+                <strong>Date of Birth:</strong> 12th June 1998
+              </p>
+            </div>
+            <div class="update-profile">
+              <h3>Request Update</h3>
+              <textarea
+                name=""
+                id=""
+                placeholder="Enter request here"
+                cols="30"
+                rows="10"
+              ></textarea>
+              <button class="btn btn-primary">Submit</button>
+            </div>
+            <div class="password-change">
+              <h3>Change password</h3>
+              <a href="./password.html"
+                ><strong>Click here to update your Login Password</strong></a
+              >
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <!--=============== MAIN JS ===============-->
+    <script src="./main.js"></script>
+  </body>
+</html>

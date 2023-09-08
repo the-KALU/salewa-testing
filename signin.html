@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--==================== FONT AWESOME ====================-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/signin.css" />
+    <title>Salewa: Login</title>
+  </head>
+  <body>
+    <!-- BEGINING OF NAVBAR -->
+    <nav>
+      <div class="container nav_container">
+        <a href="index.html">
+          <h4>SALEWA</h4>
+        </a>
+        <ul class="nav__menu">
+          <li><a href="./index.html">Home</a></li>
+          <li class="active" aria-selected="true">
+            <a href="./signin.html">Login</a>
+          </li>
+          <li><a href="./signup.html">Signup</a></li>
+          <li><a href="./ceo.html">Settings</a></li>
+        </ul>
+        <button id="open-menu-btn">
+          <i class="fa fa-bars" aria-hidden="true"></i>
+        </button>
+        <button id="close-menu-btn">
+          <i class="fa fa-times" aria-hidden="true"></i>
+        </button>
+      </div>
+    </nav>
+
+    <!-- END OF NAVBAR -->
+
+    <!-- SIGNIN FORM -->
+
+    <main class="container signin__container">
+      <form class="signin__form">
+        <h1 class="text">Please Login</h1>
+
+        <div class="text">
+          <input
+            type="email"
+            id="floatingInput"
+            autofocus=""
+            autocapitalize="none"
+            autocomplete="username"
+            required=""
+            placeholder="name@example.com"
+          />
+          <label for="floatingInput">Email address</label>
+        </div>
+
+        <div class="text">
+          <input
+            type="password"
+            id="password"
+            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,16}$"
+            autocomplete="current-password"
+            required=""
+            placeholder="Password"
+          /><i
+            class="far fa-eye"
+            id="togglePassword"
+            style="margin-left: -30px; cursor: pointer"
+          ></i>
+          <label for="password">Password</label>
+        </div>
+
+        <button class="btn btn-primary" type="submit">Log in</button>
+        <a class="blue" href="#" style="text-decoration: none"
+          >Forgotten password?</a
+        >
+        <p class="text">
+          Don't have an account yet?
+          <a class="blue" href="signup.html" style="text-decoration: none"
+            >Register now</a
+          >
+        </p>
+      </form>
+
+      <!-- END OF CONTACT FORM -->
+    </main>
+
+    <!--=============== MAIN JS ===============-->
+    <script src="./main.js"></script>
+    <script src="./password.js"></script>
+  </body>
+</html>
