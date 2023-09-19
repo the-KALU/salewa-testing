@@ -186,6 +186,7 @@ footer {
 .footer-container {
   display: grid;
   grid-template-columns: 50% 23% 27%;
+
   gap: 1rem;
   padding: 2rem 0;
 }
@@ -247,7 +248,7 @@ footer a:hover {
 }
 
 footer .copyright {
-  width: 100%;
+  grid-column: 1 / span 3;
   text-align: center;
 }
 
@@ -283,9 +284,10 @@ footer .copyright {
   .nav__menu {
     position: fixed;
     top: 5rem;
-    right: 5%;
+    right: 0;
+    left: 0;
     height: fit-content;
-    width: 18rem;
+    width: 100%;
     flex-direction: column;
     gap: 0;
     display: none;
@@ -338,6 +340,10 @@ footer .copyright {
 
   .col-1 {
     grid-column: 1 / span 2;
+  }
+
+  .stacked {
+    grid-column: 1 / 2;
   }
 
   .copyright {
@@ -413,10 +419,14 @@ footer .copyright {
   }
 
   .col-1 {
-    grid-column: 1 / 1;
+    grid-column: 1 / 4;
+  }
+
+  .stacked {
+    grid-column: 1 / 4;
   }
 
   .copyright {
-    grid-column: 1 / 1;
+    grid-column: 1 / 4;
   }
 }

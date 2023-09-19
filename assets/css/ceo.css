@@ -26,6 +26,10 @@ main .container {
   color: var(--color-white);
 }
 
+.table {
+  overflow-x: auto;
+}
+
 /* left*/
 main .container .left {
   height: max-content;
@@ -144,6 +148,7 @@ main .container .left .profile {
 
 section {
   display: none;
+  min-height: 93vh;
 }
 
 section.active[data-content] {
@@ -423,6 +428,7 @@ td {
 .expense-action {
   display: flex;
   justify-content: end;
+  gap: 2rem;
 }
 
 .expense-action button {
@@ -473,7 +479,8 @@ td {
 /*END OF SETTINGS*/
 
 /* BEGINING OF STAFF POPUP MODAL */
-.open-staff {
+.open-staff,
+.load-modal {
   background: rgba(255, 255, 255, 0.5);
   width: 100vw;
   height: 100vh;
@@ -487,7 +494,8 @@ td {
   overflow-y: auto;
 }
 
-.open-staff .card {
+.open-staff .card,
+.load-modal .card {
   background: var(--color-white);
   padding: 3rem;
   border-radius: var(--card-border-radius);
@@ -495,11 +503,13 @@ td {
   box-shadow: 0 0 1rem var(--color-primary);
 }
 
-.open-staff button {
+.open-staff button,
+.load-modal button {
   margin-bottom: 3rem;
 }
 
-.open-staff .staff-info {
+.open-staff .staff-info,
+.load-modal .staff-info {
   display: flex;
   margin-bottom: 2rem;
   justify-content: space-between;
@@ -520,7 +530,8 @@ td {
 
 .staff-info,
 .staff-profile,
-.open-staff h3 {
+.open-staff h3,
+.load-modal h3 {
   color: var(--color-bg2);
 }
 
@@ -533,13 +544,14 @@ td {
 .qty-changed,
 .qty-returned,
 .qty-sold,
-.total {
+.total,
+.total-expense {
   text-align: center;
 }
 
 /* END OF STAFF POPUP MODAL */
 
-/* SALES PAGE */
+/* SALES PAGE START */
 /* Current Day Sales */
 
 .current {
@@ -621,6 +633,8 @@ textarea {
   color: var(--color-bg2);
 }
 
+/* SALES PAGE END */
+
 /* TABLET SIZE MEDIA QUERY */
 
 @media screen and (max-width: 1400px) {
@@ -693,9 +707,15 @@ textarea {
   .p li {
     font-weight: 500;
   }
-  .open-staff .card {
+  .open-staff .card,
+  .load-modal .card {
     width: 100%;
   }
+
+  .load-modal .card {
+    min-height: 100vh;
+  }
+
   .btn {
     padding: 0.8rem 1.5rem;
   }
@@ -713,7 +733,10 @@ textarea {
   .recipes,
   .notes,
   .pending-requests,
-  .settings {
+  .settings,
+  .current,
+  .records,
+  .profile {
     padding: 2rem 2rem 4rem;
   }
 
@@ -727,37 +750,53 @@ textarea {
 }
 
 @media screen and (max-width: 750px) {
+  th {
+    height: 2.2rem;
+    font-weight: 600;
+  }
+
+  td {
+    height: 2rem;
+    font-weight: 500;
+  }
+
+  .left .sidebar .menu-item {
+    height: 2.5rem;
+  }
+
+  .left .sidebar h3 {
+    font-size: 0.8rem;
+  }
+
   .staff__container {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 0.8rem;
+  }
+
+  .team__member {
+    padding: 1rem;
+  }
+  .team__member-info * {
+    margin-top: 0.6rem;
   }
   .settings table {
     padding-top: 0;
   }
-}
+  .expense-action button {
+    width: fit-content;
+  }
 
+  table .item {
+    padding-left: 0.5rem;
+  }
+}
 @media screen and (max-width: 600px) {
-  .left .handle,
   .left .sidebar h3,
-  .left strong {
+  .left strong,
+  main .container .left .profile {
     display: none;
   }
 
-  .container {
-    grid-template-columns: 1fr;
-  }
-
-  main .container .left .profile {
-    background: transparent;
-    justify-content: center;
-  }
-
-  main .container {
-    grid-template-columns: 15% auto;
-  }
-}
-
-@media screen and (max-width: 550px) {
   th {
     font-size: 0.6rem;
   }
@@ -784,12 +823,7 @@ textarea {
     z-index: 10;
     display: grid;
     grid-template-columns: 1fr;
-  }
-
-  main .container .left .profile {
-    /* padding: 0;
-    width: 3rem; */
-    display: none;
+    height: 3rem;
   }
 
   .left .sidebar {
@@ -798,6 +832,23 @@ textarea {
     justify-content: space-between;
     display: flex;
     background: transparent;
+  }
+
+  .left .sidebar .menu-item {
+    height: auto;
+  }
+
+  .left .sidebar a {
+    min-width: 3rem;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .left .sidebar a span i {
+    font-size: 1.2rem;
+    padding: 1rem;
+    margin: 1rem 0;
   }
   .left .sidebar .menu-item:first-child.active {
     overflow: hidden;
@@ -823,7 +874,7 @@ textarea {
   .left .sidebar .active::before {
     height: 0.5rem;
     width: 100%;
-    bottom: 0;
+    bottom: 0rem;
   }
 
   .left .btn {
@@ -834,22 +885,25 @@ textarea {
   }
 
   section {
-    min-height: 100vh;
+    min-height: 90vh;
   }
 
   .team__member {
-    padding: 1rem;
+    padding: 0.8rem 0.7rem 0.5rem;
   }
 
   .team__member-info * {
-    margin-top: 0.8rem;
+    margin-top: 0.4rem;
     font-size: 0.7rem;
   }
 
   .staff,
   .recipes,
   .pending-requests,
-  .settings {
+  .settings,
+  .profile,
+  .current,
+  .records {
     padding: 2rem 1rem 4rem;
   }
   .recipes .add-recipe,
@@ -857,12 +911,23 @@ textarea {
     width: 100%;
   }
 
+  .requests {
+    margin-top: 0;
+  }
+  .pending-requests .profile-photo {
+    width: 3rem;
+  }
+
   .pending-requests .request {
-    padding: 1rem;
+    padding: 0.7rem;
   }
 
   .pending-requests .request * {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
+  }
+
+  .request .info {
+    margin-bottom: 0.6rem;
   }
 
   .price-action {
@@ -883,23 +948,60 @@ textarea {
     height: 10rem;
   }
 
-  .open-staff .card {
+  .open-staff .card,
+  .load-modal .card {
     padding: 0.8rem;
   }
 
-  .open-staff .card .item {
+  .open-staff .card .item,
+  .load-modal .card .item {
     padding-left: 0.5rem;
   }
 
-  .open-staff .request {
+  .open-staff .request,
+  .load-modal .request {
     padding: 1rem;
   }
 
-  .open-staff .expense-action {
+  .open-staff .expense-action,
+  .load-modal .expense-action {
     justify-content: center;
+    gap: 1rem;
   }
 
-  .open-staff .info .expense {
+  .open-staff .info .expense,
+  .load-modal .info .expense {
     padding-left: 0.5rem;
+  }
+
+  .open-staff button,
+  .load-modal button {
+    margin-bottom: 1.5rem;
+    padding: 0.5rem 1.5rem;
+  }
+
+  table {
+    padding: 0.6rem 0 1rem;
+  }
+
+  .profile-class p,
+  .profile strong {
+    font-size: 0.8rem;
+  }
+
+  .profile h2 {
+    padding-top: 0;
+  }
+
+  .current .btn,
+  .profile .btn,
+  .records .btn {
+    padding: 0.4rem 0.8rem;
+    font-weight: 600;
+    font-size: 0.7rem;
+  }
+
+  textarea {
+    padding: 0.8rem;
   }
 }

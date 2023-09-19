@@ -78,35 +78,6 @@ recipes.forEach(recipe => {
 // END OF RECIPE SECTION
 
 
-// FAQ TOGGLE ON MD
-
-const toggleFAQ = document.querySelectorAll('.faq.hide-on-md');
-const seeMore = document.querySelector('#turn-on');
-const seeLess = document.querySelector('#turn-off');
-
-seeMore.addEventListener('click', () => {
-
-    seeMore.style.display = 'none';
-    seeLess.style.display = 'grid';
-    toggleFAQ.forEach(faq => {
-        faq.style.display = 'flex'
-    })
-
-
-})
-
-seeLess.addEventListener('click', () => {
-
-    seeLess.style.display = 'none';
-    seeMore.style.display = 'grid';
-    toggleFAQ.forEach(faq => {
-        faq.style.display = 'none'
-    })
-
-})
-
-// END OF FAQ TOGGLE ON MD
-
 
 // OPEN STAFF PROFILE
 
@@ -134,3 +105,29 @@ closeModal.addEventListener('click', () =>{
     staffModal.style.display = 'none';
 });
 
+
+// Load products Mpdal
+
+const assigns = document.querySelectorAll('.assign');
+const loadModal = document.querySelector('.load-modal');
+const closeLoad = document.querySelector('.close-load');
+
+const openLoadModal = () => {
+    loadModal.style.display = 'grid';
+}
+
+const closeLoadModal = (e) => {
+    if (e.target.classList.contains('assign')) {
+        loadModal.style.display = 'none';
+    }
+}
+
+assigns.forEach((assign) =>{
+assign.addEventListener('click', openLoadModal)
+});
+
+loadModal.addEventListener('click', closeLoadModal);
+
+closeLoad.addEventListener('click', () =>{
+    loadModal.style.display = 'none';
+});

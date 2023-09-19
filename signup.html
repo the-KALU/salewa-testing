@@ -31,7 +31,6 @@
           <li class="active" aria-selected="true">
             <a href="./signup.html">Signup</a>
           </li>
-          <li><a href="./ceo.html">Settings</a></li>
         </ul>
         <button id="open-menu-btn">
           <i class="fa fa-bars" aria-hidden="true"></i>
@@ -73,7 +72,13 @@
             type="email"
             id="floatingInput"
             placeholder="name@example.com"
+            required
           />
+        </div>
+
+        <div class="text">
+          <label for="dob"><strong>Date of birth</strong></label>
+          <input type="date" id="dob" required />
         </div>
 
         <div class="text">
@@ -92,6 +97,7 @@
             type="tel"
             id="phoneNumber"
             placeholder="Enter Phone Number"
+            required
           />
         </div>
 
@@ -100,6 +106,7 @@
           ><input
             type="text"
             autocomplete
+            required
             id="address"
             placeholder="Enter Your Address"
           />
