@@ -619,6 +619,10 @@ td {
   color: var(--color-bg2);
 }
 
+.profile-class p {
+  font-weight: 600;
+}
+
 textarea {
   background: var(--color-bg1);
   display: flex;
