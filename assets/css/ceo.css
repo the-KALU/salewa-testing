@@ -827,13 +827,13 @@ textarea {
     z-index: 10;
     display: grid;
     grid-template-columns: 1fr;
-    height: 3rem;
+    height: 4rem;
   }
 
   .left .sidebar {
     margin: 0 1rem;
     border-radius: 0;
-    justify-content: space-between;
+    justify-content: space-around;
     display: flex;
     background: transparent;
   }
@@ -850,7 +850,7 @@ textarea {
   }
 
   .left .sidebar a span i {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     padding: 1rem;
     margin: 1rem 0;
   }

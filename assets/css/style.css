@@ -377,6 +377,13 @@ footer .copyright {
   h4 {
     font-size: 0.8rem;
   }
+
+  p,
+  a,
+  footer * p,
+  footer a {
+    font-size: 0.8rem;
+  }
   .container {
     width: var(--container-width-sm);
   }
@@ -428,5 +435,9 @@ footer .copyright {
 
   .copyright {
     grid-column: 1 / 4;
+  }
+
+  footer .col {
+    margin-bottom: 0;
   }
 }
