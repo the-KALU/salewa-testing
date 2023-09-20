@@ -379,9 +379,8 @@ footer .copyright {
   }
 
   p,
-  a,
   footer * p,
-  footer a {
+  footer * a {
     font-size: 0.8rem;
   }
   .container {
